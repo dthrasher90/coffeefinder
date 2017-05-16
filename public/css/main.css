@@ -1,0 +1,79 @@
+body{
+
+
+  font-family: sans-serif;
+  background-color: white;
+    
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px solid black;
+    font-size: 48px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+#cityInputCon{
+
+  height: 50px;
+  width:  100%;
+  text-align: center;
+ padding-top: 20px;
+}
+
+#cityName{
+/*  margin-top: px;*/
+  margin-bottom: 25px;
+  width: 200px;
+  height: 30px;
+
+
+}
+
+#names{
+
+  font: arial-black; 
+  background-color: white;
+  width: 100%;
+  height:700px;;
+  border: 5px solid midnightblue;
+  overflow: auto;
+}
+
+h2{
+  text-align: center;
+  margin: 0 auto;
+ 
+  text-decoration: underline;
+}
+
+#map {
+     width: 100%;
+     height: 700px;
+
+}
+
+.shopInfo {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.shopName{
+  font-weight: bold;
+}
+
+.checkins{
+  border-bottom: 1px solid black;
+}
+
+article{
+ border-bottom: 1px surl()olid black;    
+    
+}
+
+shopName :hover{
+    background-color:lightgoldenrodyellow;
+}

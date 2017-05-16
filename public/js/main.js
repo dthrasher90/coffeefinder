@@ -49,8 +49,8 @@ $.getJSON(fourSquareUrl, function(data){
         $.each(data.response.venues, function(i,venues){
 
 
-             content = '<p class="shopInfo">' + venues.name +'</br>'+venues.location.formattedAddress+ '</br>'+
-             venues.url+ '</br>' + venues.contact.formattedPhone+ '</br>'+ "Checkins Counted= "+ venues.stats.checkinsCount+  '</p>';
+             content = '<artilce class="shopInfo">' + '<p class= shopName>' + venues.name+ '</p>' +venues.location.formattedAddress+ '</br>'+
+             venues.url+ '</br>' + venues.contact.formattedPhone+ '</br>'+   '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+ '</p>' + '</artlce>';
             $(content).appendTo("#names");
           //  console.log(data.response);
 
