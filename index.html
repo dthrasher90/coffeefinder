@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Never Be Tired Again!</title>
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+<!--- City Name input -->
+<div class="container-fluid">
+    <div  class="row">
+        <div class="col-lg-12">
+            <div id="cityInputCon">
+                <input type="text" id="cityName" placeholder="Fairbanks, AK">
+                <input type="submit" id="button" value="Get City" />
+            </div>
+        </div>
+ </div>
+<!--<div id="results"> Coordinate Results </div>-->
+
+
+<!---Main Content Container ----->
+<div class="row">
+    <div class="col-lg-12">
+        <div id="map"></div>
+    </div>
+</div>
+<!--Left and right sub content -->
+<div class="row">
+    <div class="col-lg-12">
+        <div id="names">
+            <h2>Get Coffee Now!</h2>
+        </div>
+        <div id="data"></div>
+    </div>
+</div>
+
+
+</div>
+<!--Script Links---->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM&callback=initMap" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
