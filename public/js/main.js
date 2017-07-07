@@ -15,19 +15,15 @@ $(document).ready(function(){
 
 //submit button function, get's user input
 $("#button").click(function(){
-    var city=$("#cityName").val();
+   var city=$("#cityName").val();
   
 
 //Google Json Request
   var url="https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM";
     $.getJSON(url, function(json){
-        console.log(json.results[0].geometry.location);
+        // console.log(json.results[0].geometry.location);
         var myLat = json.results[0].geometry.location.lat;
         var myLong = json.results[0].geometry.location.lng;
-
-        // console.log(myLat);
-        // console.log(myLong);
-
 
         var userLocation = new google.maps.LatLng(myLat, myLong);
         var map = new google.maps.Map($('#map')[0], {
@@ -50,19 +46,24 @@ $.getJSON(fourSquareUrl, function(data){
         $.each(data.response.venues, function(i,venues){
 
 
-             content =
-              '<div class=" card shopInfo">' + 
+           content =
+                 '<article class="card shopInfo">' + 
+                  // '<div class="card-block>'+
 
-             '<h4 class= shopName>' + venues.name+ 
-             '</h4>'  +venues.location.formattedAddress+ 
-             '</br>'+ venues.url+ 
-             '</br>' + venues.contact.formattedPhone+ 
-             '</br>'+   
-             '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+
-             '</p>'+' </div>';
+                   '<h4 class= " card-title shopName">' + venues.name+ 
+                   '</h4>'  +venues.location.formattedAddress+ 
+                       '</br>'+ venues.url+ 
+                       '</br>' + venues.contact.formattedPhone+ 
+                       '</br>'+   
+                       '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+
+                 '</p>'+ 
+                 // '</div>' +
+                 '</article>';
+
+
             $(content).appendTo("#names");
-     ;
-            var infowindow = new google.maps.InfoWindow({ });
+     
+         var infowindow = new google.maps.InfoWindow({ });
             
             var i;
             for (i = 0; i < 20; i++) {
@@ -84,12 +85,7 @@ $.getJSON(fourSquareUrl, function(data){
                     });
                      
                     }
-
-        // console.log(coffeeShopCoords);
-
-            //coffeeShop= json.results[0].geometry.location;
-            //console.log(coffeeShop);
-
+     //end brackets
             });
     });  });
 }); });
