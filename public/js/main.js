@@ -3,7 +3,7 @@ var map, myLat, myLong;
 
 function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 64.8377778, lng: -147.71638889999997},
+        center: {lat: 40.7608, lng: -111.8910},
         zoom: 11
         }); }
 
@@ -16,6 +16,7 @@ $(document).ready(function(){
 //submit button function, get's user input
 $("#button").click(function(){
     var city=$("#cityName").val();
+  
 
 //Google Json Request
   var url="https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM";
@@ -24,8 +25,8 @@ $("#button").click(function(){
         var myLat = json.results[0].geometry.location.lat;
         var myLong = json.results[0].geometry.location.lng;
 
-        console.log(myLat);
-        console.log(myLong)
+        // console.log(myLat);
+        // console.log(myLong);
 
 
         var userLocation = new google.maps.LatLng(myLat, myLong);
@@ -36,7 +37,7 @@ $("#button").click(function(){
 
   });
 
-  console.log(json.results[0]);
+  // console.log(json.results[0]);
   var myLat = json.results[0].geometry.location.lat;
   var myLong = json.results[0].geometry.location.lng;
 
@@ -49,26 +50,46 @@ $.getJSON(fourSquareUrl, function(data){
         $.each(data.response.venues, function(i,venues){
 
 
-             content = '<artilce class="shopInfo">' + '<p class= shopName>' + venues.name+ '</p>' +venues.location.formattedAddress+ '</br>'+
-             venues.url+ '</br>' + venues.contact.formattedPhone+ '</br>'+   '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+ '</p>' + '</artlce>';
+             content =
+              '<div class=" card shopInfo">' + 
+
+             '<h4 class= shopName>' + venues.name+ 
+             '</h4>'  +venues.location.formattedAddress+ 
+             '</br>'+ venues.url+ 
+             '</br>' + venues.contact.formattedPhone+ 
+             '</br>'+   
+             '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+
+             '</p>'+' </div>';
             $(content).appendTo("#names");
-          //  console.log(data.response);
-
-
+     ;
+            var infowindow = new google.maps.InfoWindow({ });
+            
             var i;
             for (i = 0; i < 20; i++) {
                      var coffeeShopCoords = data.response.venues[i].location;
+                     var venueName = data.response.venues[i].name;
                      var latLng = new google.maps.LatLng(coffeeShopCoords);
                      var marker = new google.maps.Marker({
+                       name:   data.response.venues[i].name,
                        position: latLng,
                        map: map
                      });
-                   }
+                     console.log(venueName);
+                     google.maps.event.addListener(marker, 'mouseover', function(){
+                        infowindow.setContent(this.name);
+                        infowindow.open(map, this);
+                    });
+                     google.maps.event.addListener(marker,  'mouseout', function(){
+                        infowindow.close(map, this);
+                    });
+                     
+                    }
 
-        console.log(coffeeShopCoords);
+        // console.log(coffeeShopCoords);
 
             //coffeeShop= json.results[0].geometry.location;
             //console.log(coffeeShop);
+
             });
     });  });
 }); });
