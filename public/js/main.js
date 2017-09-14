@@ -52,7 +52,7 @@ $.getJSON(fourSquareUrl, function(data){
 
                    '<h4 class= " card-title shopName">' + venues.name+ 
                    '</h4>'  +venues.location.formattedAddress+ 
-                       '</br>'+ venues.url+ 
+                       '</br>' + venues.url+ 
                        '</br>' + venues.contact.formattedPhone+ 
                        '</br>'+   
                        '<p class="checkins">'  + "Checkins Counted = "+ venues.stats.checkinsCount+

@@ -1,58 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title>Never Be Tired Again!</title>
-  <link type="text/css" rel="stylesheet" href="css/main.css" />
 
+<head>
+    <title>Never Be Tired Again!</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-<!-- Bootstrap  -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
-
-<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 </head>
 
 <body>
-
-<header>Get Coffee Now!!!</header>
-
- <div id="cityInputCon">
-    <input type="text" id="cityName" placeholder="Salt Lake City">
-    <input type="submit" class="btn btn-primary" id="button" value="Get City" />
- </div>
-
-
-<!--- City Name input -->
-<div class="container-fluid">
-    <div  class="row">
-
-
-        <div class="col-md-7">
-          <div id="map"></div>
-       </div>
-  
-        <div class="col-md-5">
-                <div id="names"> </div>
+    <header> <h1>Get Coffee Now!!!</h1>
+      </header>
+    <div class="wrapper">
+        <div id="cityInputCon">
+         <h5>Enter City Name to find Local Coffee Shops via Four Square</h5>
+            <input type="text" id="cityName" placeholder="Salt Lake City">
+            <input type="submit" class="btn btn-primary" id="button" value="Get City" />
         </div>
-
-</div>
-
-
-</div>
-<!--Left and right sub content -->
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM&callback=initMap" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="js/main.js"></script>
+        <!--- City Name input -->
+        <div class="container-fluid mainWrapper">
+            <div class="row">
+                <div class="col-md-7">
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-5">
+                    <h2>Local Coffee Shops</h2>
+                    <div id="names"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Left and right sub content -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM&callback=initMap" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
